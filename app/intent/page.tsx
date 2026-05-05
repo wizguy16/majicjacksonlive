@@ -1,19 +1,28 @@
 import { FunnelCta } from "@/components/FunnelCta";
 import { PageShell } from "@/components/PageShell";
-import { funnelHref, resolveFunnelOutUrl } from "@/lib/funnel";
+import {
+  FUNNEL_OUT_URL_FALLBACK,
+  funnelHref,
+  resolveFunnelOutUrl,
+} from "@/lib/funnel";
+
+/** Read env on each request — avoids stale baked-in NEXT_PUBLIC after build cache. */
+export const dynamic = "force-dynamic";
 
 /**
- * Root funnel URL — set in project root `.env.local`:
- *   NEXT_PUBLIC_FUNNEL_OUT_URL=https://your-actual-affiliate-link.com
- * No quotes. Restart `npm run dev` after editing.
- * For Vercel etc., set the same name in Project → Environment Variables.
+ * Prefer `FUNNEL_OUT_URL` in `.env.local` (server-only, not inlined at compile time).
+ * Falls back to `NEXT_PUBLIC_FUNNEL_OUT_URL` if needed.
  */
+const funnelEnvRaw =
+  process.env.FUNNEL_OUT_URL ?? process.env.NEXT_PUBLIC_FUNNEL_OUT_URL;
+
 const { url: OUT_URL, usedFallback: funnelOutUrlFallback } =
-  resolveFunnelOutUrl(process.env.NEXT_PUBLIC_FUNNEL_OUT_URL);
+  resolveFunnelOutUrl(funnelEnvRaw);
 
 if (process.env.NODE_ENV === "development" && funnelOutUrlFallback) {
   console.warn(
-    "⚠️ FUNNEL OUT URL NOT SET — using fallback https://example.com",
+    "⚠️ FUNNEL OUT URL NOT SET — using Mavr tracker fallback. Set FUNNEL_OUT_URL in .env.local.\n",
+    FUNNEL_OUT_URL_FALLBACK,
   );
 }
 

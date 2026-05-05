@@ -26,7 +26,7 @@ export default function Home() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="/videos/tease.mp4" type="video/mp4" />
+            <source src="/videos/tease-new.mp4" type="video/mp4" />
           </video>
         </div>
 

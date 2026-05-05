@@ -6,7 +6,7 @@ type Src = "live" | "vault" | "vip";
 
 /**
  * Outbound funnel CTA with dev-only click trace.
- * `referrerPolicy="no-referrer"` — remove if your affiliate needs the Referer header.
+ * Default referrer behavior — many affiliate redirects rely on Referer/cookies.
  */
 export function FunnelCta({
   href,
@@ -24,7 +24,6 @@ export function FunnelCta({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      referrerPolicy="no-referrer"
       className={className}
       onClick={() => {
         if (process.env.NODE_ENV === "development") {
