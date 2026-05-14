@@ -101,7 +101,7 @@ export function AppChrome({ children }: { children: ReactNode }) {
             </p>
           </div>
 
-          <div className="app-menu-premium-chat mb-6 w-full max-w-full rounded-2xl border border-black/10 bg-white/80 p-2 shadow-sm overflow-hidden">
+          <div className="mb-6 w-full max-w-full rounded-2xl border border-black/10 bg-white/80 p-2 shadow-sm overflow-hidden">
             <PremiumChatWidget />
           </div>
 
