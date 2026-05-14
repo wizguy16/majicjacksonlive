@@ -46,7 +46,10 @@ export default function IntentPage() {
         </header>
 
         <div className="flex w-full flex-col gap-3">
-          <section className="border-2 border-black bg-white p-3 sm:p-4">
+          <section
+            id="section-live"
+            className="scroll-mt-24 border-2 border-black bg-white p-3 sm:p-4"
+          >
             <p className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-[#ff0000] sm:mb-2">
               Currently active
             </p>
@@ -62,7 +65,10 @@ export default function IntentPage() {
             </FunnelCta>
           </section>
 
-          <section className="border-2 border-black bg-white p-3 sm:p-4">
+          <section
+            id="section-vault"
+            className="scroll-mt-24 border-2 border-black bg-white p-3 sm:p-4"
+          >
             <h2 className="mb-3 text-base font-bold text-black sm:mb-4 sm:text-lg">
               Locked content archive
             </h2>
@@ -75,7 +81,10 @@ export default function IntentPage() {
             </FunnelCta>
           </section>
 
-          <section className="border-2 border-black bg-white p-3 sm:p-4">
+          <section
+            id="section-vip"
+            className="scroll-mt-24 border-2 border-black bg-white p-3 sm:p-4"
+          >
             <h2 className="mb-3 text-base font-bold text-black sm:mb-4 sm:text-lg">
               Priority / VIP channel
             </h2>

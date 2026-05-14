@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AppChrome } from "@/components/app-chrome";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export default function RootLayout({
         className="min-h-full bg-white text-black antialiased"
         suppressHydrationWarning
       >
-        {children}
+        <AppChrome>{children}</AppChrome>
       </body>
     </html>
   );
