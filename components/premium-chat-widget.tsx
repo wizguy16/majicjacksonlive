@@ -2,9 +2,10 @@
 
 import Script from "next/script";
 
-export function PremiumChatButton() {
+/** Full profile embed (not `type: 'button'`). Renders in `.pchat-widget-placeholder` only. */
+export function PremiumChatWidget() {
   return (
-    <div className="pt-1">
+    <div className="w-full">
       <div className="pchat-widget-placeholder" />
 
       <Script id="premium-chat-widget" strategy="afterInteractive">
@@ -25,8 +26,7 @@ export function PremiumChatButton() {
             }
             p.push({
               num: p.length,
-              wid: 970021,
-              type: 'button'
+              wid: 970021
             });
           })(document, window, 970021);
         `}

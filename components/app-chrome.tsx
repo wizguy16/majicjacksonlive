@@ -3,7 +3,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { useEffect, useId, useState } from "react";
-import { PremiumChatButton } from "@/components/premium-chat-button";
+import { PremiumChatWidget } from "@/components/premium-chat-widget";
 
 export function AppChrome({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -82,13 +82,27 @@ export function AppChrome({ children }: { children: ReactNode }) {
           </button>
         </div>
 
-        <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-5 pb-8 pt-6">
-          <div className="border-b border-black/10 pb-4 mb-4">
+        <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-5 pb-8 pt-5">
+          <div className="mb-5 border-b border-black/10 pb-4">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-black">
+              Private Access
+            </p>
+            <p className="mt-1 text-[11px] text-black/55">
+              {"Discovery & session funnel"}
+            </p>
+          </div>
+
+          <div className="mb-2">
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#ff0000]">
               Private access
             </p>
-            <p className="mt-1 text-sm font-semibold text-black">Live chat</p>
-            <PremiumChatButton />
+            <p className="mt-1 text-sm font-semibold text-black">
+              Talk to me directly.
+            </p>
+          </div>
+
+          <div className="app-menu-premium-chat mb-6 w-full max-w-full rounded-2xl border border-black/10 bg-white/80 p-2 shadow-sm overflow-hidden">
+            <PremiumChatWidget />
           </div>
 
           <ul className="flex flex-col gap-0 border-t-2 border-black">

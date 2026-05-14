@@ -5,3 +5,15 @@ body {
   color: #000000;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+
+/* Premium.Chat full block: soften default blue chrome inside our menu card */
+.app-menu-premium-chat div.pchat-widget-block {
+  max-width: 100%;
+  margin: 0;
+}
+
+.app-menu-premium-chat div.pchat-widget-block iframe {
+  border-radius: 0.75rem !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06) !important;
+}
