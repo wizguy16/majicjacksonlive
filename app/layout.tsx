@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Private Access",
-  description: "Private access funnel",
+  description: "Private access",
 };
 
 export default function RootLayout({

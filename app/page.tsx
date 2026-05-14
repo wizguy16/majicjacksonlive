@@ -24,7 +24,7 @@ export default function Home() {
             muted
             loop
             playsInline
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
           >
             <source src="/videos/tease-new.mp4" type="video/mp4" />
           </video>

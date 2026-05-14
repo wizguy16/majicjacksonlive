@@ -3,7 +3,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { useEffect, useId, useState } from "react";
-import { PremiumChatWidget } from "@/components/premium-chat-widget";
+import { PrivateAccessCard } from "@/components/private-access-card";
 
 export function AppChrome({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -87,25 +87,13 @@ export function AppChrome({ children }: { children: ReactNode }) {
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-black">
               Private Access
             </p>
-            <p className="mt-1 text-[11px] text-black/55">
-              {"Discovery & session funnel"}
-            </p>
           </div>
 
-          <div className="mb-2">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#ff0000]">
-              Private access
-            </p>
-            <p className="mt-1 text-sm font-semibold text-black">
-              Talk to me directly.
-            </p>
+          <div className="pb-2">
+            <PrivateAccessCard variant="compact" className="w-full" />
           </div>
 
-          <div className="mb-6 w-full max-w-full rounded-2xl border border-black/10 bg-white/80 p-2 shadow-sm overflow-hidden">
-            <PremiumChatWidget />
-          </div>
-
-          <ul className="flex flex-col gap-0 border-t-2 border-black">
+          <ul className="mt-6 flex flex-col gap-0 border-t-2 border-black">
             <li className="border-b-2 border-black">
               <Link
                 href="/"
